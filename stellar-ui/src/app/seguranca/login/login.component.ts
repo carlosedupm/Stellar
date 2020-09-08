@@ -15,11 +15,13 @@ export class LoginComponent implements OnInit {
   authForm: FormGroup;
   isSubmitted  =  false;
 
+
   ngOnInit(): void {
     this.authForm  =  this.formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
-  });
+    });
+
 }
 // tslint:disable-next-line: typedef
 get formControls() { return this.authForm.controls; }
