@@ -2,6 +2,8 @@ package br.com.stellar.api.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -40,7 +42,7 @@ public class ProdutoController {
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	//public Produto adicionar(@RequestBody @Valid ProdutoInput produtoInput) {
-		public Produto adicionar(@RequestBody Produto produtoInput) {
+		public Produto adicionar(@RequestBody @Valid Produto produtoInput) {
 	        //Cidade cidade = cidadeInputDisassembler.toDomainObject(cidadeInput);
 	        
 	       return  produtoService.salvar(produtoInput);
